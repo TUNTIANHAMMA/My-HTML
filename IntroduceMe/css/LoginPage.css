@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #c1b492;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Login {
+    border: 2px solid black;
+    text-align: center;
+    width: 20vh;
+    height: 7vh;
+    background-color: deeppink;
+    border-radius: 5vh;
+    font-size: 25px;
+    box-shadow: 0px 0px 0 1px rgba(0, 0, 0, 1); /* 初始阴影 */
+    background: deeppink;
+    background-image: url("../img/bg_main2.gif");
+    image-rendering: pixelated;
+    transition: box-shadow 0.3s ease; /* 仅过渡阴影 */
+}
+
+/* 鼠标悬停时，按钮沉入阴影 */
+.Login:hover {
+    box-shadow: 0px 0px 4px 4px black; /* 增强阴影效果 */
+	border: 0;
+}
+
+.Login p {
+    margin: 0;
+    font-weight: bold;
+}

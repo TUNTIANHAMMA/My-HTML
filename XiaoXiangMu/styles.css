@@ -1,0 +1,70 @@
+body{
+	background-color: #BF4D34;
+	margin: 0%;
+}
+
+span{
+	color: #A4BFA6;
+	font-size: 30px;
+	font-family: font-family: system-ui;
+	font-weight: bold;
+	display: block;
+	padding-top: 0px;
+}
+
+.border{
+	background-color: #227355;
+	border: 10px dashed #A4BFA6;
+	border-radius: 10px;
+	margin: 50px 0;
+}
+
+
+
+h1{
+	margin: 10px auto;
+	text-align: center;
+	font-size: 5rem;
+	color: #BF4D34;
+}
+
+img{
+	margin: 0;
+	height: 200px;
+	width: auto;
+	border-radius: 30px ;
+	padding: 10px;
+	border-color: #BF7D56;
+	
+}
+
+
+
+img:hover{
+	opacity: 0.8;
+}
+
+
+
+
+ul{
+	display: flex;
+	
+	margin: 0%;
+	overflow: hidden;
+}
+
+li{
+	margin: 5px 5px -2px 5px;
+	text-align: center;
+	font-size: 1.5rem;
+	display: inline;
+	float: left;
+	border: 5px dashed ;
+	border-radius: 25px 25px 0 0;
+}
+
+li:first-child{
+	width: 500pxs;77
+}
+伪类选择器 

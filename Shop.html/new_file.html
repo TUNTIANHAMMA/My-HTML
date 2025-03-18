@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> <!-- 设置字符编码为 UTF-8 -->
+    <title>电脑配件商城一通向计算机世界的桥梁</title> <!-- 网页标题 -->
+    <meta name="description" content="电脑配件商城网为全国的电脑商家提供丰富的电脑配件批发服务,是电脑配件货源,是您最佳的网络电脑配件商"> <!-- 网页描述信息 -->
+    <meta name="keywords" content="电脑配件批发、批发电脑配件、电脑配件货源、电脑配件进货、数码配件批发、电脑配件、中国电脑配件"> <!-- 网页关键词 -->
+    <style>
+        .page { display: none; } 
+        /* 默认隐藏所有页面内容 */
+    </style>
+    <script>
+        // 切换显示页面内容的函数
+        function showPage(pageId) {
+            // 隐藏所有页面
+            document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+            // 显示指定页面
+            document.getElementById(pageId).style.display = 'block';
+        }
+        
+        // 自动跳转到指定网址的函数
+        function redirect() {
+            setTimeout(() => {
+                window.location.href = "http://www.pconline.com.cn"; // 10秒后跳转
+            }, 10000); // 10000毫秒 = 10秒
+        }
+
+        // 页面加载时执行的操作
+        window.onload = () => {
+            showPage('page1'); // 默认显示第一个页面
+            redirect(); // 开始计时跳转
+        };
+    </script>
+</head>
+<body>
+    <h1>页面将在10秒后跳转到太平洋电脑网</h1> <!-- 页面主标题 -->
+    <button onclick="showPage('page1')">宝藏</button> <!-- 点击按钮显示第一个页面 -->
+    <button onclick="showPage('page2')">这里什么都没有</button> <!-- 点击按钮显示第二个页面 -->
+    
+    <div id="page1" class="page"> <!-- 第一个页面 -->
+        <h2>这里并没有什么东西</h2> <!-- 第二级标题 -->
+        <p>什么东西都没有</p> <!-- 内容描述 -->
+    </div>
+    
+    <div id="page2" class="page"> <!-- 第二个页面 -->
+        <h2>ohhhhh</h2> <!-- 第二级标题 -->
+        <p>恭喜你找到了宝藏！！！！！</p> <!-- 内容描述 -->
+    </div>
+</body>
+</html>

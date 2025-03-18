@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN,EN">
+  <head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="css/sheet.css">
+  </head>
+  <body>
+	  <div class="pic1">
+	  	<img src="img/Lainpt3.gif" alt="我在看着你" />
+	  	<nav class="crumbs">
+	  		<ol class="olnav">
+	  			<li class="crumb"><a class="pS" href="LoginPage.html">Login</a></li>
+	  			<li class="crumb"><a class="pS" href="index.html">Index</a></li>
+	  			<li class="crumb"><a class="pS" href="sheet.html">Sheet</a></li>
+	  		</ol>
+	  	</nav>
+	  </div>
+	  <div class="pM header" id="top"><i><header>TUNTIANHAMMA's Wired Word</header></i></div>
+    <h1>Registration Form</h1>
+    <p>请在本表中填写所需信息</p>
+    <div class="background">
+		<!-- 返回主页面 -->
+		<div>
+			
+		</div>
+		<!-- ------------------------------------------------------------------- -->
+		<form method="post" action='http://api.wcwcw.top/post'>
+		  <fieldset>
+		    <label for="first-name">Enter Your First Name: <input id="first-name" name="first-name" type="text" required /></label>
+		    <label for="last-name">Enter Your Last Name: <input id="last-name" name="last-name" type="text" required /></label>
+		    <label for="email">Enter Your Email: <input id="email" name="email" type="email" required /></label>
+		    <label for="new-password">Create a New Password: <input id="new-password" name="new-password" type="password" pattern="[a-z0-9]{8,}" required /></label>
+		  </fieldset>
+		  <fieldset>
+		    <legend>Account type (required)</legend>
+		    <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" checked /> Personal</label>
+		    <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> Business</label>
+		  </fieldset>
+		  <fieldset>
+		    <label for="profile-picture">上传一个Meme: <input id="profile-picture" type="file" name="file" /></label>
+		    <label for="age">你今年多少岁了(114514): <input id="age" type="number" name="age" min="13" max="120" /></label>
+		    <label for="referrer">同志你也是来拉屎的?
+		      <select id="referrer" name="referrer">
+		        <option value="">(看到了吧，所以你快点的选)</option>
+		        <option value="1">QQ群</option>
+		        <option value="2">同学介绍</option>
+		        <option value="3">我根本不想认识你</option>
+		        <option value="4">最后一个，你哪来那么多选择</option>
+		      </select>
+		    </label>
+		    <label for="bio">不要在这里发癫:
+		      <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+		    </label>
+		  </fieldset>
+		  <label for="terms-and-conditions">
+		    <input class="inline" id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" /> 我遵守 <a href="https://www./terms-of-service/">Rule 34</a>
+		  </label>
+		  <input type="submit" value="Submit">
+		</form>
+	</div>
+  </body>
+</html>
