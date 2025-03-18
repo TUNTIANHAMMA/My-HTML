@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<link rel="stylesheet" href="lesson2.css">
+		<meta charset="utf-8">
+		<title>登录</title>
+	</head>
+	<body>
+		<h1><i>Login</i></h1>
+		<form name="login" action="http://api.wcwcw.top/post" method="post" enctype="multipart/form-data" >
+			<fieldset>
+				<!-- 文本域 -->
+				<label for="username">账号:</label>
+				<input id="username" name="username" type="text" required placeholder="你的账号？">
+				<br>
+				<label for="password">密码:</label>
+				<input id="password" name="password" type="password" required placeholder="******">
+			</fieldset>
+			<fieldset>
+				<!-- 单选 -->
+				<legend>你的性别？</legend>
+				<label for="gender" id="gender"></label>
+				<input type="radio" id="gender" name="gender" value="male" checked>男
+				<br>
+				<input type="radio" id="gender" name="gender" value="female">女
+			</fieldset>
+			<fieldset>
+				<!-- 复选框 -->
+				<legend>兴趣爱好？</legend>
+				<input type="checkbox" name="hobby[]" value="sing"/>唱
+				<input type="checkbox" name="hobby[]" value="jump"/>跳
+				<input type="checkbox" name="hobby[]" value="rap"/>rap
+				<input type="checkbox" name="hobby[]" value="basketball"/>篮球
+			</fieldset>
+			<fieldset>
+				<legend>你的故乡？</legend>
+				<select name="province" id="province">
+					<option value="Si`chuan">四川</option>
+					<option value="Bei`jing" selected>北京</option>
+					<option value="Xi`an">西安</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<legend>上传你的抽象头像</legend>
+				<input type="file" name="picture">
+			</fieldset>
+			<fieldset>
+				<legend><label for="aboutme">AboutU?</label></legend>
+				<textarea name="aboutme" id="aboutme" cols="40" rows="5"></textarea>
+			</fieldset>
+			<input type="submit" style="display: ;" value="登录">
+			<input type="reset" />
+		</form>
+	</body>
+</html>

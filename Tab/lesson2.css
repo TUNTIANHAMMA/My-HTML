@@ -1,0 +1,11 @@
+fieldset,legend {
+	background-color: pink;
+	margin: 0%;
+}
+body {
+	background-color: blue;
+	margin: 0%;
+}
+h1 {
+	background-color: pink;
+}

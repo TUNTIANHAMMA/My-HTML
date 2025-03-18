@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="index.css">
+		<title>表格示例页面</title>
+	</head>
+	<body>
+		<table border="1">
+			<caption>全班学生花名册</caption>
+			<tr>
+				<th colspan="2">学号姓名</th>
+				<!-- <th>居中并加粗 -->
+				<th>性别</th>
+			</tr>
+			<tr>
+				<td colspan="2">2052442135刘小麟</td>
+				<td rowspan="2">男</td>
+			</tr>
+			<tr>
+				<td colspan="2">2052442136liuxiaolin</td>
+				<!-- <td>nan</td> -->
+			</tr>
+			<!-- <caption>放在末尾会被table放在最前</caption> -->
+		</table>
+		<h1>表单示例</h1>
+		<form name="login" method="GET" action="123456">
+			用户名: <input type="text" />
+			<br />
+			密&nbsp;&nbsp;&nbsp;码: <input name="password" type="password"/>
+			<div>
+				<input type="submit" />
+			</div>
+		</form>
+	</body>
+</html>
