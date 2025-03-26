@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的基本使用</title>
+</head>
+<body>
+    
+    <script>
+        // 函数的基本使用
+        // 函数是由很多方法构成
+        //        📌 特点
+        //  方法是对象的属性，其值是一个函数。
+        //  需要通过对象来调用，例如 person.sayHello();。
+        //  this 关键字通常指向调用该方法的对象。
+
+        function alert01(){
+            alert("今天天气很好")
+        }
+        // 调用函数
+        alert01()
+
+        // 求1-100累加
+        function sum(){
+            var sum = 0
+            for (var i = 0; i < 100; i++) {
+                sum += i
+            }
+            console.log( sum)
+        }
+        sum()
+
+        // 函数的封装 a b sum
+        function sum01(a,b){
+            var sum01 = 0
+            for (var i = a; i < b; i++) {
+                sum01 += i
+            }
+            console.log( sum01)
+        }
+
+
+        // 求1-100内的素数
+        function sushu (a,b){
+            for (var i = a; i < b; i++) {
+                var isPrime = true;
+                for (var j = 2; j <= Math.sqrt(i); j++) { // 只检查 2 到 √i 之间的数
+                    if (i % j === 0) { // 只要在这个循环里面发现能被整除的数，那么这个数就不是素数，直接跳出循环，遍历下一个数
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime) {
+                    console.log(i);
+                }
+            }
+        }
+        sushu(2,100)
+
+        // 1-100内奇数合
+        function jishu(a,b){
+            var sum02 = 0
+            for (var i = a; i < b; i++) {
+                if(i % 2 != 0){
+                    sum02 += i
+                }
+            }
+            console.log(sum02)
+        }
+        jishu(1,100)
+
+
+        // ----------------------------------arguments----------------------------------------
+        // 函数中的arguments 对象，是一个类数组对象（伪数组），包含了函数调用时传入的所有参数。
+        // arguments 对象只有在函数体内部，才可以使用。
+        // arguments 对象不是一个数组，是一个类数组对象。
+        // arguments 对象只有 length 属性，没有数组的方法。
+        // arguments 对象只是与数组相似，但它并不是一个数组。
+        function sum03(){
+            var sum03 = 0
+            for (var i = 0; i < arguments.length; i++) {
+                sum03 += arguments[i]
+            }
+            console.log(sum03)
+        }
+        sum03(1,2,3,4,5,6,7,8,9,10)
+
+        // 输出最大值
+        function max(){
+            // 当没有任何形参时，默认会有一个arguments对象，其length属性为0
+            var max = arguments[0]
+            for (var i = 0; i < arguments.length; i++) {
+                if(arguments[i] > max){
+                    max = arguments[i]
+                }
+            }
+            console.log(max)
+        }
+        max(1,2,3,4,5,6,7,8,9,10)
+
+        // -------------------------------------arguments-------------------------------------
+    </script>
+</body>
+</html>
