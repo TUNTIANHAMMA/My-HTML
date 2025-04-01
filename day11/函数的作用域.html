@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的作用域</title>
+</head>
+<body>
+    <script>
+        // 函数的作用域
+        // 函数的作用域是指函数内部可以访问的变量和对象的范围。函数的作用域分为全局作用域和局部作用域。
+        var a01 = "班长" // 全局变量
+        function test_01(){
+            var a02 = "班长的同学" // 局部变量
+
+            // 当内部函数访问外部变量时(找不到该变量)，外部变量会被提升到函数的作用域中 
+
+            // console.log(a01); // 打印全局变量 没问题
+            console.log(a02); // 打印局部变量
+        }
+        console.log(a01); // 打印全局变量
+        // console.log(a02); // 打印局部变量，报错：Uncaught ReferenceError: a02 is not defined
+    </script>
+</body>
+</html>
