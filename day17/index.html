@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li id="li01">1</li>
+        <li name="li02">2</li>
+        <li id="li03">3</li>
+        <li class="li04">4</li>
+        <li class="li05">5</li>
+        <ul>
+            <li name="ulli">61</li>
+        </ul>
+    </ol>
+    <label for="input"></label>
+    <input type="text" id="input" placeholder="请输入内容">
+    <button id="btn">切换颜色</button>
+    <script>
+        // 获取元素
+        const li = document.getElementsByTagName('li'); // 获取所有li元素
+        const li04 = document.getElementsByClassName('li04');
+        const input = document.getElementById('input');
+        li[0].style.backgroundColor = 'pink';
+        li[1].style.backgroundColor = 'green';
+        li[2].style.backgroundColor = 'red';
+        li04[0].style.backgroundColor = 'blue';
+        input.style.backgroundColor = 'pink';
+        const ulli = document.getElementsByName('ulli');
+        ulli[0].style.backgroundColor = 'yellow';
+
+        const li05 = document.querySelector('.li05'); // 通过class获取节点
+        const li03 = document.querySelector('#li03'); // 通过id获取节点
+        const li02 = document.querySelector('[name="li02"]'); // 通过name获取节点
+        const li01 = document.querySelector('li'); // 通过标签名获取节点
+
+
+        const html = document.documentElement; // 获取html元素
+        html.style.backgroundColor = 'blue'; // 设置html元素的背景颜色为蓝色
+        const body = document.body; // 获取body元素
+        body.style.backgroundColor = 'pink'; // 设置body元素的背景颜色为粉色
+
+        const button = document.getElementById('btn'); // 获取按钮元素
+    </script>
+</body>
+</html>

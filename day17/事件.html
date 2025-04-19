@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>什么是事件</title>
+</head>
+<body>
+    <!--  页面代码  -->
+
+    <div>
+        <button id="btn01">弹出一句话</button>
+    </div>
+    <div>
+        <button id="btn02">ToPink</button>
+    </div>
+    <div>
+        <button id="btn03">ToYellow</button>
+    </div>
+
+
+    <!--  逻辑代码 -->
+      <script>
+        const btn01 = document.getElementById('btn01'); // 获取按钮元素
+        // 给按钮绑定事件，注册点击事件（onclick），事件都是以函数的形式来注册的
+        btn01.onclick = function() {
+            alert('事件注册成功'); // 弹出提示框
+        }; // 事件处理函数
+
+
+
+        const btn02 = document.getElementById('btn02'); // 获取按钮元素
+        btn02.onclick = function() {
+            const bc = document.body
+            bc.style.backgroundColor = 'pink'; // 设置背景颜色为粉色
+        }; // 事件处理函数
+        btn02.onmouseover = function() {
+            const bc = document.body
+            bc.style.backgroundColor = 'green'; // 设置背景颜色为绿色
+        }; 
+
+        const btn03 = document.getElementById('btn03'); // 获取按钮元素
+        btn03.onmouseup = function() {
+            const bc = document.body
+            bc.style.backgroundColor = 'blue'; // 设置背景颜色为蓝色
+        };
+        btn03.onclick = function() {
+            const bc = document.body
+            bc.style.backgroundColor = 'yellow'; // 设置背景颜色为黄色
+        };
+    
+
+
+        // 事件监听器
+        // 事件监听器是一个函数，用于处理特定事件的发生。它可以在事件发生时被调用，并执行相应的操作。
+        // 事件监听器可以通过addEventListener方法来注册。
+      </script>
+</body>
+</html>
