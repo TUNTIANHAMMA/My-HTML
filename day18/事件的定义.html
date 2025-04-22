@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="btn01">ToPink</button>
+        <button id="btn02">ToYellow</button>
+        <button id="btn03">ToNomal</button>
+    </div>
+    <script>
+        // 事件的绑定 点击事件
+        // 第一步，获取事件源
+        // 第二步，绑定事件
+        const div = document.querySelector('div');
+        div.onclick = function() {
+            console.log('div被点击了');
+        }
+        // 点击按钮btn01，背景色变成粉色
+        const btn01 = document.getElementById('btn01');
+        btn01.onclick = function() {
+            const bc = document.body
+            bc.style.backgroundColor = 'pink'; // 设置背景颜色为粉色
+        };
+        // 点击按钮btn02，背景色变成黄色
+        const btn02 = document.getElementById('btn02');
+        btn02.onclick = function() {
+            const bc = document.body
+            bc.style.backgroundColor = 'yellow'; // 设置背景颜色为黄色
+        };
+        // 点击按钮btn03，清除背景色
+        const btn03 = document.getElementById('btn03');
+        btn03.onclick = function() {
+            const bc = document.body
+            bc.style.backgroundColor = '';
+        };
+    </script>
+</body>
+</html>

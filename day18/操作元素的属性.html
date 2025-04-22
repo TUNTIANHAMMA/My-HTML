@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>property</title>
+</head>
+<body>
+    <!--  页面代码  -->
+      <div>
+        <img src="" alt="123">
+        <button id="btn01">切换为狗</button>
+        <button id="btn02">切换为猫</button>
+      </div>
+    <!--  逻代码 -->
+      <script>
+        const img = document.getElementByTagName('img'); 
+        // 点击按钮改变图片的链接和文字
+        const btn01 = document.getElementById('btn01');
+        btn01.onclick = function() {
+            img.src = 'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png';
+            img.alt = 'dog';
+        };
+        const btn02 = document.getElementById('btn02');
+        btn02.onclick = function() {
+            img.src = 'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png';
+            img.alt = 'cat';
+        }
+      </script
+</body>
+</html>
