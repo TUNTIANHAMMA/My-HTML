@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div01">
+        <img src="img/a.png" alt="">
+        <img src="img/b.png" alt="">
+        <img src="img/c.png" alt="">
+        <button class="prev"><</button>
+        <button class="next">></button>
+    </div>
+
+
+    <script>
+        const btn_all = document.getElementsByName('button');
+        const img_all = document.getElementsByName('img');
+        btn_all[0].onclick = function(){
+            // 点击切换图片
+            
+            for(let i = 1; i < img_all.length; i++){
+                img_all[i].display = 'none';
+                img_all[i + 1].display = 'show';
+            }
+        }
+        btn_all[1].onclick = function(){
+            // 点击切换图片
+            for(let i = 0; i < img_all.length; i++){
+                img_all[i].display = 'none';
+                img_all[i + 1].display = 'show';
+            }
+        }
+    </script>
+</body>
+</html>
