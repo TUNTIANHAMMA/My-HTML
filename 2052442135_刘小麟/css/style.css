@@ -10,7 +10,7 @@ img{
     height: 400px;
 }
 .prev, .next{
-    padding: 15px;
+    padding: 5px;
     font-size: 30px;
     width: 60px;
     background-color: rgb(155, 151, 151,40%);

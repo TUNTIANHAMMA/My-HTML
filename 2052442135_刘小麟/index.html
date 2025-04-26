@@ -19,6 +19,20 @@
         const btn_all = document.getElementsByTagName('button');
         const img_all = document.getElementsByTagName('img');
         let currentIndex = 0;
+        // 定义一个函数，封装判断语句
+        function showImage(index) {
+            for (let i = 0; i < img_all.length; i++) {
+                img_all[i].style.display = (i === index) ? 'block' : 'none';
+            }
+        }
+
+
+        // 使用定时器调用showImage函数
+        setInterval(function () {
+            currentIndex = (currentIndex + 1) % img_all.length;
+            showImage(currentIndex);
+        }, 2000); // 每2秒切换一次图片
+
     
         // 初始化，只显示第一张图
         for (let i = 0; i < img_all.length; i++) {
@@ -36,6 +50,10 @@
             currentIndex = (currentIndex + 1) % img_all.length;
             img_all[currentIndex].style.display = 'block';
         }
+
+
+        // 自动播放
+
     </script>
     
 </body>
