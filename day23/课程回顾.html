@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>第一个div</div>
+
+
+
+
+    <script>
+        var div01 = document.getElementsByTagName("div")[0];
+        // 循环控制创建span
+        for (var i = 0; i < 10; i++) {
+            var span01 = document.createElement("span"); // 创建一个span节点
+            span01.innerText = "第" + (i + 1) + "个span"; // 设置span的内容
+            div01.appendChild(span01); // 添加到div节点中
+        }
+        // 获取第十个span
+        var span10 = div01.lastElementChild;
+        span10.style.backgroundColor = "red"; // 设置背景颜色为红色
+
+        // 复制节点 true表示深度复制，false表示浅复制
+        // 深拷贝 div01.cloneNode(true);
+        var div01Clone = div01.cloneNode(true);
+        div01.appendChild(div01Clone); // 添加到div节点中
+        // 浅拷贝
+        var span10Clone2 = span10.cloneNode(false); // 复制span节点
+        span10Clone2.innerText = "浅复制的span"; // 设置复制的span的内容
+        div01.appendChild(span10Clone2); // 添加到div节点中
+    </script>
+</body>
+</html>

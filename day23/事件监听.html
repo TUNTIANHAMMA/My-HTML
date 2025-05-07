@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #div01 {
+            width: 135px;
+            min-height: 25px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button>点击添加一个节点</button>
+    <button>点击删除一个节点</button>
+    <div id="div01"></div>
+
+
+
+    <script>
+        var div01 = document.getElementById("div01");
+        var btn02 = div01.previousElementSibling;
+        var btn01 = div01.previousElementSibling.previousElementSibling;
+
+        // 属性方式绑定事件
+
+        // 只能绑定一个类型的事件
+        btn01.onclick = function () {
+            var p01 = document.createElement("p");
+            p01.innerText = "第" + (div01.childElementCount + 1) + "个P标签";
+            div01.appendChild(p01);
+        }
+
+        function remove() {
+            var p01 = div01.lastElementChild; // 获取最后一个子元素节点
+            if (p01) {
+                div01.removeChild(p01);
+            } else {
+                alert(p01);
+            }
+        }
+
+
+        // 事件监听方式绑定事件
+
+        // 三个参数 事件类型 回调函数 [是否捕获]
+
+        // 可以给同一个绑定多个类型的事件
+
+        btn02.addEventListener("click", remove);
+
+        // 移除事件监听
+        btn02.addEventListener("mouseover", remove);
+        btn02.removeEventListener("mouseover", remove);
+    </script>
+</body>
+</html>
