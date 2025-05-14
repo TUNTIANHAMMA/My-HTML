@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+</head>
+<body>
+    <div>
+        <h1>浏览器对象模型</h1>
+        <p>浏览器对象模型是指浏览器提供的JavaScript对象，主要用于操作浏览器窗口、历史记录、导航等功能。</p>
+        <p>常用的BOM对象有：window、navigator、location、history等。</p>
+        <p>window对象是BOM的顶层对象，所有其他BOM对象都是它的属性和方法。</p>
+        <p>navigator对象用于获取浏览器的信息，如浏览器名称、版本号等。</p>
+        <p>location对象用于获取和设置当前文档的URL信息。</p>
+        <p>history对象用于访问用户的浏览历史记录。</p>
+    </div>
+
+
+
+
+
+    <script>
+        // 浏览器对象模型，最大的是window对象
+        var num = 10;
+        console.log(window.num); // 10
+
+
+        console.log(window);
+
+
+        // window.open('http://www.baidu.com', '_blank', 'width=400,height=400'); // 打开一个新的窗口
+        // window.close(); // 关闭当前窗口
+
+        // 向上滚动到指定目标
+        // window.scrollTo(0, 2000);
+
+
+
+        // 获取浏览器的窗口大小
+        var width = window.innerWidth; // 获取窗口的宽度
+        var height = window.innerHeight; // 获取窗口的高度
+        console.log('窗口的宽度：' + width);
+        console.log('窗口的高度：' + height);
+
+
+        
+    </script>
+</body>
+</html>

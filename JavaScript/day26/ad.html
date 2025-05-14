@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小广告</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: seagreen;
+        }
+        #piaofu {
+            width: 150px;
+            height: 150px;
+            background-color: #ccc;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            text-align: center;
+            border: #ccc 1px solid;
+            border-radius: 10px;
+            box-shadow: 5px 5px 20px rgba(0,0,0,0.6);
+        }
+    </style>
+</head>
+<body>
+    <div id="piaofu">
+        <p>2052442135</p>
+        <p>刘小麟</p>
+    </div>
+    <script>
+        var ad = document.getElementById('piaofu');
+        function move() {
+            var top = Math.random() * (window.innerHeight - 150);
+            var left = Math.random() * (window.innerWidth - 150);
+            ad.style.top = top + 'px';
+            ad.style.left = left + 'px';
+        }
+        setInterval(move, 1000);
+    </script>
+</body>
+</html>
