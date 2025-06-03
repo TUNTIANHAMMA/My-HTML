@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQUery元素操作</title>
+</head>
+<body>
+    <div id="div01">
+        <ul>
+            <li class="li01"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li id="li05"></li>
+            <li id="li06"></li>
+            <li></li>
+        </ul>
+        <button>Button</button>
+    </div>
+    
+    <div id="div02"></div>
+
+
+    <script src="../js/jquery-3.7.1.js"></script>
+    <script>
+
+        let index;  
+        $("li").each(function(index,element){
+            console.log("元素的下标",index)
+            console.log("获取到的元素",element)
+
+            // element通过each()方法遍历出来的元素是js中的DOM元素，需要使用jQuery转化之后才可以使用jQuery中的方法
+            // element.css({background:"pink"})
+            $(element).css({background:"pink"})
+            $(element).text(`这是${index + 1}`)
+        })
+
+
+
+        // ----------------------------------jQuery中元素查找的方法----------------------------------------
+
+        console.log("当前元素的后代元素",$("ul").find("li"))         // 可以用来查找当前元素的后代元素
+        console.log("当前元素的父级元素",$("ul").parent())       // 可以用来查找当前元素的父级元素
+        console.log("当前元素的所有父级元素",$("ul").parents())       // 可以用来查找当前元素的所有父级元素
+        console.log("当前元素的所有兄弟元素",$("#li05").siblings())       // 可以用来查找当前元素的所有兄弟元素
+        console.log("当前元素的上一个兄弟元素",$("#li05").prev())       // 可以用来查找当前元素的下一个兄弟元素
+        console.log("当前元素的下一个兄弟元素",$("#li05").next())       // 可以用来查找当前元素的上一个兄弟元素
+        console.log("当前元素前面的兄弟元素",$("#li05").prevAll())
+        console.log("当前元素后面的兄弟元素",$("#li05").nextAll())
+
+        console.log($("#li05").parent().next())
+        // ·---------------------------------------------------------------------------------------------
+
+
+
+        
+
+        // ----------------------------------jQueery 过滤元素的方法--------------------------------------
+
+        console.log("获取对应下标的元素 eq",$("li").eq(1))
+        console.log("获取对应参数的元素 filter",$("li").filter("#li05"))
+        console.log("判断该元素中是否有对应类名的元素 hasClass",$("li").hasClass("li01"))   // 不要加 .
+        console.log("保留该元素中含有特定后代的元素 has",$("li").has("#li05")) // 返回 含有特定后代的元素
+        console.log("判断该元素中是否含有对应特征的元素 is",$("li").is("#li06"))
+
+        // ------------------------------------------------------------------------------------------------
+
+
+
+
+        // ------------------------------------------添加元素----------------------------------------------
+
+
+        $("ul").append("<div>这是通过append新添加的元素</div>")
+        $("ul").prepend("<div><em>这是通过prepend新添加的元素</em></div>")
+
+        // $("ul").appendTo("")
+
+        // 添加兄弟元素
+        $("#li05").before("<li><em>Before新添加的元素</em></li>")
+        $("#li05").after("<li><em>After 新添加的元素</em></li>")
+        
+        // 复制元素        clone()
+        $("#li05").clone().text(`这是通过clone的第五个li的副本`).appendTo("ul")
+
+
+        // 元素的替换
+        $("#div02").replaceWith("<h1>被替换的div</h1>")
+        // replaceAll 替换所有匹配的元素
+
+        // 删除元素
+        // empty 删除该元素的子元素
+        // remove  删除
+
+
+
+
+    </script>
+</body>
+</html>
