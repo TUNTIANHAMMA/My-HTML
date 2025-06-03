@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漂浮的小广告</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- 页面代码 -->
+    <div id="ad">
+        2024级14班<br>漂浮的小广告
+        <button id="btn">x</button>
+    </div>
+
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <p>135456746874654</p>
+    <!-- 逻辑代码 -->
+    <!-- <script>
+        // 实现小广告在可视区域的来回移动
+        // 获取小广告的坐标
+        var ad = document.getElementById("ad")
+        // 获取可视区域
+        var html01 = document.documentElement
+        // 获取button按钮
+        var btn = document.getElementById("btn")
+        console.log(btn)
+        // 定义一个移动函数
+        var gox = 1, goy = 1
+        function move() {
+            // 获取小广告的距离左上角的坐标
+            var x = ad.offsetLeft
+            var y = ad.offsetTop
+            console.log("小广告的横纵坐标为：", x, y)
+            // 获取小广告本身的宽高
+            var ad_w = ad.offsetWidth
+            var ad_h = ad.offsetHeight
+            console.log("小广告本身的宽高为：", ad_w, ad_h)
+            // 获取屏幕可视区域的宽高
+            var w = html01.clientWidth
+            var h = html01.clientHeight
+            console.log("小屏幕可视区域的宽高为：", w, h)
+            // 判断小广告的极限位置---控制小广告的方向
+            if (x <= 0) {
+                gox = 1
+            } else if (x + ad_w >= w) {
+                gox = -1
+            }
+            if (y <= 0) {
+                goy = 1
+            } else if (y + ad_h >= h) {
+                goy = -1
+            }
+            // 改变小广告的坐标
+            x = x + 20 * gox
+            y = y + 10 * goy
+            // 将计算好的坐标赋值给小广告
+            ad.style.left = x + "px"
+            ad.style.top = y + "px"
+
+        }
+        // 使用定时器自动调用函数
+        var timer = setInterval(move, 100)
+
+        // 绑定鼠标移入事件---小广告暂停事件
+        ad.onmouseover = function(){
+            // 关闭按钮出现
+            btn.style.display = "inline"
+            clearInterval(timer)
+            ad.style.opacity = 0.5
+        }
+        // 绑定鼠标移出事件---小广告继续飘动
+        ad.onmouseout = function(){
+            // 关闭按钮消失
+            btn.style.display = "none"
+            // 定时器的叠加问题
+            clearInterval(timer)
+            timer = setInterval(move, 100)
+            ad.style.opacity = 1
+        }
+        // 给按钮绑定点击事件，关闭小广告
+        btn.onclick = function(){
+            // 关闭小广告
+            ad.style.display = "none"
+            // 跳转到其他的页面
+            window.open("https://www.baidu.com/")
+            clearInterval(timer)
+            // 注销移出事件
+            ad.onmouseout = null
+        }
+    </script> -->
+
+
+
+    <script src="../js/jquery-3.7.1.js"></script>
+    <script>
+        var $ad = $("#ad");
+        var $btn = $("#btn");
+        var $window = $(window);
+
+        var gox = 1, goy = 1;
+
+        function move() {
+            var x = $ad.position().left;    // 元素在文档中的定位
+            var y = $ad.position().top;
+
+            var ad_w = $ad.outerWidth();  // 获取包含边距的距离   用来计算与边框的距离
+            var ad_h = $ad.outerHeight();
+
+            var w = $window.width();
+            var h = $window.height();
+
+            if (x <= 0) {
+                gox = 1;
+            } else if (x + ad_w >= w) {
+                gox = -1;
+            }
+
+            if (y <= 0) {
+                goy = 1;
+            } else if (y + ad_h >= h) {
+                goy = -1;
+            }
+
+            x = x + 20 * gox;
+            y = y + 10 * goy;
+
+            $ad.css({ left: x + "px", top: y + "px" });
+        }
+        var timer = setInterval(move, 100);
+
+        // $ad.mouseenter(function () {
+        //     $btn.show();
+        //     clearInterval(timer);
+        //     $ad.css("opacity", 0.5);
+        // });
+
+        // $ad.mouseover(function () {
+        //     $btn.hide();
+        //     clearInterval(timer);
+        //     timer = setInterval(move, 100);
+        //     $ad.css("opacity", 1);
+        // });
+
+        // $btn.click(function () {
+        //     $ad.hide();
+        //     clearInterval(timer);
+        //     $ad.off("mouseleave");
+        //     window.open("https://www.baidu.com/");
+        // });
+
+
+
+
+
+        $ad.on("mouseenter", function () {
+            $btn.show();
+            clearInterval(timer);
+            $ad.css("opacity", 0.5);
+        });
+
+        $ad.on("mouseleave", function () {
+            $btn.hide();
+            clearInterval(timer);
+            timer = setInterval(move, 100);
+            $ad.css("opacity", 1);
+        });
+
+        $btn.on("click", function () {
+            $ad.hide();
+            clearInterval(timer);
+            $ad.off("mouseleave");
+            window.open("https://www.baidu.com/");
+        });
+    </script>
+</body>
+
+</html>
