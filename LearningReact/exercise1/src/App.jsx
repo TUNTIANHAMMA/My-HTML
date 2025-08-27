@@ -17,7 +17,6 @@ const App = () => {
     ]
   }
 
-
   return (
     <div>
       <Header name = {course.name} />
@@ -34,7 +33,6 @@ const Header = (props) => {
     <h1>{props.name}</h1>
   )
 }
-
 const Content = (props) => {
   return (
     <div>
@@ -44,7 +42,6 @@ const Content = (props) => {
     </div>
   )
 }
-
 const Part = (props) => {
   return (
     <p>
@@ -52,7 +49,6 @@ const Part = (props) => {
     </p>
   )
 }
-
 const Total = ({parts}) => {
   return (
     <p>
