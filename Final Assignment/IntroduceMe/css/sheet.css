@@ -1,0 +1,185 @@
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #c1b492;
+  font-size: 25px;
+  background: url("../img/bg_main2.gif");
+}
+
+h1, p {
+  margin: 1em auto;
+  text-align: center;
+}
+
+form {
+  width: 75vw;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+  background-color: black;
+}
+
+fieldset {
+  border: none;
+  padding: 2rem 0;
+  border-bottom: 3px solid black;
+}
+
+fieldset:last-of-type {
+  border-bottom: none;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+input,
+textarea,
+select {
+  margin: 10px 0 0 0;
+  width: 99%;
+  min-height: 2em;
+}
+
+input, textarea {
+  background-color: black;
+  border: 1px solid #d2738a;
+  border-radius: 5px;
+  color: whitesmoke;
+}
+
+.inline {
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+
+input[type="file"] {
+  padding: 1px 2px;
+}
+
+.inline{
+  display: inline; 
+}
+
+.background {
+	margin: 0 auto;
+	max-width: 1000px;
+	background-color: black;
+	border-radius: 15px;
+	box-shadow: 10px 10px 20px black;
+}
+
+
+
+
+a {
+    text-decoration: none;
+	color: #c1b492;
+}
+
+
+a:active {
+	color:#d2738a;
+}
+
+a:hover {
+	color:#d2738a;
+	animation: wiredB2 1s ease-out infinite;
+
+}
+
+input[type="submit"] {
+  display: block;
+  width: 60%;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: black;
+  border-color: white;
+  min-width: 300px;
+  border: #c1b492 solid 1px;
+  border-radius: 8px;
+  margin-top: 50px;
+}
+
+
+
+
+
+
+.pic1 {
+    background-color: rgba(0, 0, 0, 0.8);
+	padding-bottom: 20px;
+	margin: 8px;
+}
+.pic1 img {
+	margin-top: 0;
+}
+
+nav {
+    border-bottom: 1px solid black;
+}
+
+.crumbs ol {
+    list-style-type: none;
+}
+
+.crumb {
+    display: inline-block;
+	height: 20px;
+}
+
+.crumb a::after {
+    color: #000;
+    content: '>'; /* 保持箭头符号 */
+    font-size: 80%;
+    font-weight: bold;
+    padding: 0 3px;
+    color: #c1b492;
+}
+
+.crumb:last-child a::after {
+    content: ''; /* 对最后一个元素，取消显示箭头 */
+}
+
+.olnav {
+    height: 20px;
+    margin: 0 15px;
+}
+
+ol {
+    padding: 0;
+    margin-left: 30px;
+    text-align: left;
+}
+
+li {
+    margin-bottom: 30px;
+    list-style: none;
+}
+
+.pS {
+    font-size: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #c1b492;
+}
+.pM {
+    font-size: 35px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #c1b492;
+}
+header {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #c1b492;
+	margin-bottom: 10px;
+}
+.header {
+	margin-left: 10px;
+	margin-top: 10px;
+}
