@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>电脑配件商城一通向计算机世界的桥梁</title>
+		<meta name="description" content="电脑配件商城网为全国的电脑商家提供丰富的电脑配件批发服务,是电脑配件货源,是您最佳的网络电脑配件商">
+		<meta name="keywords" content="电脑配件批发、批发电脑配件、电脑配件货源、电脑配件进货、数码配件批发、电脑配件、中国电脑配件">
+		<meta http-equiv="refresh" content="10;url=http://www.pconline.com.cn">
+		<title>页面跳转</title>
+		<style>
+		    .page { display: none; }
+		</style>
+		<script>
+		    function showPage(pageId) {
+		        document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+		        document.getElementById(pageId).style.display = 'block';
+		    }
+		    window.onload = () => showPage('page1'); // 默认显示第一个页面
+		</script>
+	</head>
+	<body>
+		<h1>页面将在10秒后跳转到太平洋电脑网</h1>
+		<button onclick="showPage('page1')">宝藏</button>
+		<button onclick="showPage('page2')">这里什么都没有</button>
+		
+		<div id="page1" class="page">
+		    <h2>这里并没有什么东西</h2>
+		    <p>什么东西都没有</p>
+		</div>
+		
+		<div id="page2" class="page">
+		    <h2>ohhhhh</h2>
+		    <p>恭喜你找到了宝藏！！！！！</p>
+		</div>
+		
+		
+	</body>
+</html>

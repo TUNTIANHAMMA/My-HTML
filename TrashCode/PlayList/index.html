@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>全球中文音乐榜上榜</title>
+    <style>
+        /* 清除默认 */
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+        }
+        ul {
+			background-color: limegreen;
+			width: 480px;
+			border-radius: 15px;
+            list-style: none;
+            padding: 0; /* 去掉内边距 */
+            margin: 0;  /* 去掉外边距 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+			box-shadow: #000 15px 15px;
+			z-index: 999;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        #background {
+            width: 800px;
+            height: 800px;
+            background-image: repeating-radial-gradient(circle at 50% 50%, #333, #000 1%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: solid #ccc 15px;
+            border-radius: 50%;
+        }
+		#background::before{
+			content: "";
+			width: 680px;
+			height: 680px;
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			background-color: limegreen;
+			border-radius: 50%;
+			transform: translate(-50%, -50%);
+		}
+    </style>
+</head>
+<body>
+    <div id="background">
+        <ul>
+			<br />
+            <li>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0wY2fkIcbyVjVbDGVLB1Ie?utm_source=generator" width="550px" height="110px" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+            </li>
+            <li>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4DCB1S7G6SmH9qlDpEVIzP?utm_source=generator" width="550px" height="110px" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+            </li>
+            <li>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5C5mtPaFTOI9n0sCer2T1G?utm_source=generator" width="550px" height="110px" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+            </li>
+            <li>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1RYb6r5wI6HAh7k0AvTYUY?utm_source=generator" width="550px" height="110px" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+            </li>
+            <li>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4l4VTXyHlzBk7xenQZvhfM?utm_source=generator" width="550px" height="110px" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
