@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul {
+            width: 100px;
+            min-height: 25px;
+            background-color: pink;
+        }
+        ol {
+            width: 100px;
+            min-height: 25px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="div01">
+        <div>这是最里层的div</div>
+    </div>
+    <button>点击向ul里添加li</button>
+    <button>点击向ol里添加li</button>
+
+
+    <script>
+        // 创建节点createElement
+        // 创建一个ol节点
+        var ol01 = document.createElement("ol"); // 创建一个ol节点 并没有添加到页面中
+
+        var a01 = document.createElement("ul"); // 创建一个ul节点 并没有添加到页面中
+        // 向指定位置添加节点
+
+        // 1. 添加到父级节点的所有子节点末尾 appendChild
+        var div01 = document.getElementById("div01");
+        div01.appendChild(a01); // 添加到div节点中 不能重复添加
+
+        // 2. 添加到父级节点的指定子节点前 insertBefore（新节点，参考节点)
+        div01.insertBefore(ol01, div01.firstChild); // 如果给定的节点已经存在于文档中，insertBefore() 会将其从当前位置移动到新位置
+
+        // 移除节点
+        // 1. 移除指定节点 removeChild(要删除的节点)
+        // div01.removeChild(ol01); // 移除指定节点
+        // 2. 移除指定节点 remove()
+        // div01.remove(); // 移除指定节点
+
+
+        // button点击事件
+        var button01 = document.getElementsByTagName("button")[0];
+        var button02 = document.getElementsByTagName("button")[1];
+
+        var curentUlLi = 0; // 当前li的数量
+        button01.onclick = function () {
+            var li01 = document.createElement("li"); // 创建一个li节点
+            li01.innerHTML = "第" + (curentUlLi+1) + "条留言"; // 设置li的内容
+            a01.appendChild(li01); // 添加到ul节点中
+            curentUlLi++; // 当前li的数量加1
+        }
+
+        var curentOlLi = 0; // 当前li的数量
+        button02.onclick = function () {
+            var li01 = document.createElement("li"); // 创建一个li节点
+            li01.innerHTML = "第" + (curentOlLi+1) + "条留言"; // 设置li的内容
+            ol01.appendChild(li01); // 添加到ol节点中
+            curentOlLi++; // 当前li的数量加1
+        }
+    </script>
+</body>
+</html>

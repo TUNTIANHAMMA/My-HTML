@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小广告</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+        }
+        #piaofu {
+            width: 150px;
+            height: 150px;
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            text-align: center;
+            border: #ccc 1px solid;
+            border-radius: 5px;
+            box-shadow: 5px 5px 20px rgba(0,0,0,0.6);
+        }
+        button {
+            width: 20px;
+            height: 20px;
+            background-color: #ccc;
+            border: #ccc 1px solid;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="piaofu">
+        <p>2052442135</p>
+        <p>刘小麟</p>
+    </div>
+    <script>
+    var ad = document.getElementById('piaofu');
+    var posX = 100, posY = 100;
+    var gox = 1, goy = 1;
+    const varible = 20;
+    const btn01 = document.createElement("button");
+
+    let start = setInterval(move, 50);
+
+    function move() {
+        var adWidth = ad.offsetWidth;
+        var adHeight = ad.offsetHeight;
+        var maxWidth = window.innerWidth - adWidth;
+        var maxHeight = window.innerHeight - adHeight;
+
+        if (posX <= 0 || posX >= maxWidth) gox *= -1;
+        if (posY <= 0 || posY >= maxHeight) goy *= -1;
+
+        posX += gox * varible;
+        posY += goy * varible;
+
+        ad.style.left = posX + 'px';
+        ad.style.top = posY + 'px';
+        console.log("1")
+    }
+
+    ad.addEventListener("mouseover", function () {
+        clearInterval(start);
+        btn01.innerText = "X";
+        btn01.style.display = "inline";
+        ad.appendChild(btn01);
+    });
+
+    ad.addEventListener("mouseout", function () {
+        start = setInterval(move, 50);
+        btn01.style.display = "none";
+    });
+
+    btn01.addEventListener("click", function () {
+        ad.style.display = "none";
+        clearInterval(start);
+    });
+</script>
+
+</body>
+</html>

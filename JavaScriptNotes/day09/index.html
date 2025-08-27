@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建一个数组
+        // 字面量方式创建
+
+        // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // 关联字创建方式
+        // var arr2 = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        // console.log(arr);
+        // console.log(arr2);
+        // 数组的遍历
+        // for (var i = 0; i < arr.length; i += 1) {
+        //     console.log(arr[i]);
+        // }
+        // 利用for of
+        // for (var item of arr) {
+        //     console.log(item);
+        // }
+        // 给定一个数组，输出大于80的元素
+        var arr3 = [90, 85, 88, 60, 70, 80, 95, 100];
+        // for (var i = 0; i < arr3.length; i += 1) {
+        //     if (arr3[i] > 80) {
+        //         console.log(arr3[i]);
+        //     }
+        // }
+        console.log("我是基准数组：" + arr3);
+        // 利用for of
+        // for (var i of arr3) {
+        //     if (i > 80) {
+        //         console.log(i);
+        //     }
+        // }
+        // 将数组元素位置反向输出
+        // var arr4 = []
+        // for (var i = arr3.length-1;i >=0;i-- ){
+        //     // arr4[i] = arr3[i] 错误
+        //     arr4[arr4.length] = arr3[i]
+        // }
+        // console.log(arr4)
+        // 将arr4进行排序
+        // console.log(arr4.sort())
+
+        // 冒泡排序
+        // for (var i = 0; i < arr3.length;i++) {
+
+        //     if (arr3[i] > arr3[i+1]){
+        //         var temp = arr3[i];
+        //         arr3[i] = arr3[i + 1];
+        //         arr3[i + 1] = temp;
+        //     }
+        //     console.log(arr3)
+        // }
+        // 倒序冒泡   有问题
+        for (var i = arr3.length; i >= 0;i--){
+            
+        }
+
+        // 插入排序
+        // for (var i = 1; i < arr3.length; i++) {
+        //     var temp = arr3[i];
+        //     for (var j = i - 1; j >= 0; j--) {
+        //         if (temp < arr3[j]) {
+        //             arr3[j + 1] = arr3[j];
+        //             arr3[j] = temp;
+        //         }
+        //     }
+        // console.log(arr3);
+        // }
+
+
+        // // 二维数组
+        // var arr5 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+        // console.log(arr5);
+        // console.log("获取二维数组中的第一个数组中的第一个元素："+arr5[0][0]);
+
+        // // 遍历二维数组
+        // for (var i = 0; i < arr5.length; i++) {
+        //     for (var j = 0; j < arr5[i].length; j++) {
+        //         console.log(arr5[i][j]);
+        //     }
+        // }
+
+        // // 二维数组求和
+        // var sum = 0;
+        // for (var i = 0; i < arr5.length; i++) {
+        //     for (var j = 0; j < arr5[i].length; j++) {
+        //         sum += arr5[i][j];
+        //     }
+        // }
+        // console.log("二维数组求和：" + sum);
+    </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuerySelector</title>
+    <style>
+  
+        li {
+            list-style: none;
+        }
+        
+        ul {
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+          <li id="li01">first</li>
+          <li id="li02">second</li>
+          <li class="li03">third</li>
+          <li id="li04" display="none">fourth</li>
+          <li id="li05">
+            <ol>
+              <li id="li06">sixth</li>
+              <li id="li07">seventh</li>
+            </ol>
+          </li>
+          <li>
+            <input type="text">
+            <input type="password" value="Password" autofocus>
+          </li>
+
+
+          <li>Test</li>
+
+          <li>
+            <input type="checkbox" value="checkbox">
+            <input type="checkbox" value="checkbox">
+
+            <input type="radio" value="radio">
+            <input type="radio" value="radio">
+          </li>
+        </ul>
+    </div>
+
+
+    <script src="../js/jquery-3.7.1.js"></script>
+
+    <script>
+        // 将除ol元素以外的所有marginpadding设置为0
+        $("*").not("ol").css({
+            margin : 0,
+            padding: 0
+        });
+
+
+        // 选择器
+        // 1. id选择器
+        $('#li01').css('background', 'red');
+        // 2. class选择器
+        $('.li03').css('background', 'blue');
+        // 3. 标签选择器
+        $('li').css('color', 'white'); // 设置所有li元素的字体颜色为银色
+        // 4. 后代选择器
+        $('li input').css('background', 'green');
+        // 5. （层次选择器）子元素选择器    获取所有的直接子元素
+        $('li>ol>li').css('background', 'pink');            // 设置 ol下的li元素背景色为粉色
+
+        // 6. 兄弟选择器
+        console.log($("ol + li")); // 获取ol后面紧邻的一个兄弟元素
+        console.log($("ol ~ li")); // 获取ol后面所有的兄弟元素
+
+
+        // 6. 筛选选择器
+        $("li:first").css('color', 'black'); // 获取第一个li元素
+        $("li:last").css('background', 'purple'); // 获取最后一个li元素
+        $("li:eq(1)").css('background', 'green'); // 设置 第二个li元素背景色为绿色
+        $("li :gt(2)").css('background', 'pink'); // 获取第三个li元素之后的所有li元素
+        $("li:lt(2)").css('margin', 'auto'); // 获取前两个li元素
+
+        console.log($("li:even")); // 获取偶数li元素
+        console.log($("li:odd")); // 获取奇数li元素
+
+        console.log( $("input:focus")); // 获取焦点的input元素
+
+
+        $("li:contains(Test)").css('background','purple') // 获取包含文本Test的li元素
+
+        console.log($("li:hidden")); // 获取隐藏的li元素
+
+
+
+        // 8. 属性选择器
+        $('input[type="text"]').css('color', 'yellow')       // 设置 文本框背景色为黄色
+
+        console.log($("li[class= li03]"));   // 不等于则是 li[class!=li03]
+
+        console.log($("li[id^=li]")); // 获取id以li开头的li元素
+
+        console.log($("li[id$=04]")); // 获取id以03结尾的li元素
+        
+        console.log($("li[id*=0]")); // 获取id包含0的li元素
+
+        console.log("子元素选择器")
+
+        console.log($("li:nth-child(2)")); // 获取li类第二个li元素
+
+        console.log($("li:nth-last-child(2)")); // 获取li类倒数第二个li元素
+
+        console.log($("ul li:first-child"));
+
+
+
+        // 表单 
+
+        // 选项框
+
+        console.log($("input[type=checkbox]")); // 获取所有的复选框
+
+
+        // 操作元素内容
+        $('input[type="text"]').val("hello world"); // 设置所有li元素的文本内容为 hello world
+
+        // 输出指定节点的内容
+        console.log($("ol li").text()); // 获取所有ol下li元素的文本内容
+
+        console.log($("ol li").html()); // 获取所有ol下li元素的html内容
+
+
+    </script>
+</body>
+</html>

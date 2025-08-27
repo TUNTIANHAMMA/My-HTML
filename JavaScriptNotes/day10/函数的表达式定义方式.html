@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 两种函数的预解析提升不同
+        // 普通函数的定义方式
+        // 这种方式的函数会在预解析的时候提升到最前面，任何地方都可以调用
+        var pro = get_pro(3, 4);
+        function get_pro(a, b){
+            return a * b;  
+
+        }
+        console.log("函数返回值："+pro);
+        // 函数的第二种表达方式------函数表达式
+        // 函数表达式的特点：函数表达式不会提升，只有在执行到函数表达式的时候才会创建函数，不能像
+        // 函数表达式的语法：var 函数名 = function(参数1, 参数2, 参数3, ...){函数体}
+        // 函数表达式的调用方式：函数名(参数1, 参数2, 参数3, ...);
+        // 函数表达式的返回值：return 返回值;
+
+        // 函数表达式的定义方式
+        var get_sum = function(a, b){
+            return a + b;
+        }
+        var sum = get_sum(3, 4);
+        console.log("函数表达式返回值："+sum);
+
+
+
+        // 函数的匿名定义方式
+        // 匿名函数的定义方式：var 函数名 = function(参数1, 参数2, 参数3, ...){函数体}
+        // 匿名函数的调用方式：函数名(参数1, 参数2, 参数3, ...);
+        // 匿名函数的返回值：return 返回值;
+        // 匿名函数的特点：匿名函数不会提升，只有在执行到匿名函数的时候才会创建函数，不能像普通函数那样在任何地方调用
+        var get_sum01 = function(a, b){
+            return a + b;
+        }
+        console.log("匿名函数:"+get_sum01(3, 4));
+
+        // 回调函数---两个函数互相调用
+        // 回调函数的定义方式：var 函数名 = function(参数1, 参数2, 参数3, ...){函数体}
+        // 回调函数的调用方式：函数名(参数1, 参数2, 参数3, ...);
+        // 回调函数的返回值：return 返回值;
+        // 回调函数的特点：回调函数是作为参数传递给另一个函数的，当另一个函数执行完毕后，会调用回调函数
+        // 定义原函数
+        function cooking (flavor){
+            var food = "炒饭";
+            food = flavor(food);
+            return food;
+        }
+        // 使用原函数调用新函数
+        var food = cooking(function(food){
+            return food += "加鸡蛋";
+        })
+
+
+        // 递归函数---自己调用自己
+        // 递归函数的定义方式：function 函数名(参数1, 参数2, 参数3, ...){函数体}
+        // 递归函数的调用方式：函数名(参数1, 参数2, 参数3, ...);
+        // 递归函数的返回值：return 返回值;
+        // 递归函数的特点：递归函数是自己调用自己的函数
+
+        // 输出某个数的阶乘
+        function factorial(n){
+            if(n == 1){
+                return 1;
+            }
+            return n * factorial(n - 1);
+        }
+        console.log("递归函数，五的阶乘"+factorial(5));
+    </script>
+</body>
+</html>

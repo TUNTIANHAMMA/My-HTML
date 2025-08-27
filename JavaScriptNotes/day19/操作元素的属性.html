@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作元素的属性attribute属性</title>
+    <style>
+        .li01{
+            font-size: 50px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- 页面代码 -->
+    <div>
+        <ul>
+            <li>第一个li</li>
+            <li>第二个li</li>
+            <li>第三个li</li>
+            <li>第四个li</li>
+        </ul>
+    </div>
+    <!-- 逻辑代码 -->
+    <script>
+        // 操作元素属性的方法 -- attribute()
+        // 设置元素属性和属性值 语法： 节点.setAttribute()
+        // 获取节点
+        const li_all = document.getElementsByTagName("li")
+        console.log(li_all)
+        // 设置属性
+        li_all[0].setAttribute("id","第一个li")
+        li_all[1].setAttribute("class","li01")
+        // 获取属性
+        const a01 = li_all[1].getAttribute("class")
+        console.log(a01)
+        // 移除属性
+        // li_all[1].removeAttribute("class")
+    </script>
+</body>
+</html>
